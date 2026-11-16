@@ -1,6 +1,6 @@
 import random
 random.seed(a=None, version=2)
-
+attempts = 1
 #This is where the upper and lower bounds are set and checked
 lower = input("set lower bound: ")
 try:
@@ -55,7 +55,10 @@ while number == False:
                 if not str(guess) == str(secret):
                     if int(guess) < int(secret):
                         print('too low!')
+                        attempts = attempts + 1
                     if int(secret) < int(guess):
                         print('too high!')
+                        attempts = attempts + 1
                 else:
                     print ('you win! run code to play again')
+                    print('you took', str(attempts), 'attempt(s)')
